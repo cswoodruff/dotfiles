@@ -33,6 +33,17 @@ ExtractSnips()	snipMate.txt	/*ExtractSnips()*
 ExtractSnipsFile()	snipMate.txt	/*ExtractSnipsFile()*
 Filename()	snipMate.txt	/*Filename()*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
+SudoEdit	SudoEdit.txt	/*SudoEdit*
+SudoEdit-config	SudoEdit.txt	/*SudoEdit-config*
+SudoEdit-contents	SudoEdit.txt	/*SudoEdit-contents*
+SudoEdit-copyright	SudoEdit.txt	/*SudoEdit-copyright*
+SudoEdit-debug	SudoEdit.txt	/*SudoEdit-debug*
+SudoEdit-faq	SudoEdit.txt	/*SudoEdit-faq*
+SudoEdit-history	SudoEdit.txt	/*SudoEdit-history*
+SudoEdit-manual	SudoEdit.txt	/*SudoEdit-manual*
+SudoEdit.txt	SudoEdit.txt	/*SudoEdit.txt*
+SudoRead	SudoEdit.txt	/*SudoRead*
+SudoWrite	SudoEdit.txt	/*SudoWrite*
 VCSCommandCVSDiffOpt	vcscommand.txt	/*VCSCommandCVSDiffOpt*
 VCSCommandCVSExec	vcscommand.txt	/*VCSCommandCVSExec*
 VCSCommandCommitOnWrite	vcscommand.txt	/*VCSCommandCommitOnWrite*
@@ -110,6 +121,8 @@ g:CSApprox_use_showrgb	CSApprox.txt	/*g:CSApprox_use_showrgb*
 g:CSApprox_verbose_level	CSApprox.txt	/*g:CSApprox_verbose_level*
 g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
+g:sudoAuth	SudoEdit.txt	/*g:sudoAuth*
+g:sudoAuthArg	SudoEdit.txt	/*g:sudoAuthArg*
 i_CTRL-R_<Tab>	snipMate.txt	/*i_CTRL-R_<Tab>*
 list-snippets	snipMate.txt	/*list-snippets*
 multi_snip	snipMate.txt	/*multi_snip*
