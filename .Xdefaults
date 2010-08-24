@@ -1,0 +1,24 @@
+! Set terminals to 256 color
+XTerm*termName: xterm-256color
+
+!Colors
+
+
+! Set terminals to 256 color
+URxvt*termName: rxvt-256color
+
+! Set font
+*font: xft:Deja Vu Sans Mono:pixelsize=12
+*boldFont: xft:Deja Vu Sans Mono:pixelsize=12
+!*font: xft:Inconsolata:pixelsize=14
+!*boldFont: xft:Inconolata:bold:pixelsize=14
+!*font: xft:Consolas:pixelsize=12:antialias=true
+!*boldFont: xft:Consolas:bold:pixelsize=12:antialias=true
+!*font: xft:Bitstream Vera Sans Mono:pixelsize=12
+!*boldFont: xft:Bitstream Vera Sans Mono:pixelsize=12
+
+! URxvt
+URxvt*scrollBar: false
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      /usr/bin/chromium
+URxvt.matcher.button:   1 
