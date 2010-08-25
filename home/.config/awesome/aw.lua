@@ -29,8 +29,8 @@ modkey = "Mod4"
 layouts =
 {
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
---    awful.layout.suit.tile.bottom,
+--    awful.layout.suit.tile.left,
+    awful.layout.suit.tile.bottom,
 --    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
 --    awful.layout.suit.fair.horizontal,
@@ -89,7 +89,7 @@ vicious.register(netwidget, vicious.widgets.net, "NET ${eth0 up_kb}/${eth0 down_
  
 volumewidget = widget({ type = "textbox" })
 volumewidget.width, volumewidget.align = 60, "center"
-vicious.register(volumewidget, vicious.widgets.volume, "VOL $2$1", 1, "Master")
+vicious.register(volumewidget, vicious.widgets.volume, "VOL $2$1", 1, "PCM")
 
 uptimewidget = widget({ type = "textbox" })
 uptimewidget.width, uptimewidget.align = 40, "center"
@@ -254,9 +254,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,         }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
     awful.key({ modkey, "Shift" }, "Print", function () awful.util.spawn("scrot -s -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
     
-    awful.key({                 }, "XF86AudioMute",        function () awful.util.spawn("amixer -c 0 set Master toggle") end),
-    awful.key({                 }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -c 0 set Master 1dB+")   end),
-    awful.key({                 }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -c 0 set Master 1dB-")   end)
+    awful.key({                 }, "XF86AudioMute",        function () awful.util.spawn("amixer sset PCM toggle") end),
+    awful.key({                 }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer sset PCM 1dB+")   end),
+    awful.key({                 }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer sset PCM 1dB-")   end)
 )
 
 clientkeys = awful.util.table.join(

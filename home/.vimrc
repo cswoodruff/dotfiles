@@ -15,18 +15,15 @@ set hidden              " Allow switching of buffers without saving
 set scrolloff=0         " Keep the cursor from getting to the edge
 
 if has("gui_running")   " GUI is running or is about to start.
-    set lines=85 columns=100 
+"    set lines=85 columns=100 
     set guioptions-=T
-"    set guioptions-=m
+    set guioptions-=m
 else
     " This is console Vim.
-    let g:CSApprox_loaded = 1
-"    if exists("+lines")
-"        set lines=50
-"    endif
-"    if exists("+columns")
-"        set columns=100
-"    endif
+    if(&term == 'rxvt-256color' || &term =~? '^screen')
+        " On my machine, I use urxvt with 256 color support
+        set t_Co=256
+    endif
 endif
                         
 
@@ -38,7 +35,7 @@ syntax on
 "============================================================================
 " Colors
 "----------------------------------------------------------------------------
-colorscheme pyte
+colorscheme vylight
 
 "============================================================================
 " Presentation

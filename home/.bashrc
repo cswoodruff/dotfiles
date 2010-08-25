@@ -22,17 +22,17 @@ export ARCH=linux64
 
 # Aliases
 alias ls='ls --color=auto'
-alias pkgbk='comm -23 <(clyde -Qeq) <(clyde -Qmq) > pkglist; clyde -Qmq > pkglist_aur'
+alias pkgbk='comm -23 <(clyde -Qeq) <(clyde -Qmq) > ~/backup/pkglist; clyde -Qmq > ~/backup/pkglist_aur'
 alias etckeeper='sudo etckeeper'
 
 
 # SSH
-alias abidyne="ssh abidyne"
-alias cobra="ssh cobra"
-alias marsbrd1="ssh marsbrd1"
-alias odo="ssh odo"
-alias timphase="ssh timphase"
-alias tyr="ssh tyr"
+alias abidyne="ssh cwoodruf@abidyne.jpl.nasa.gov"
+alias cobra="ssh cwoodruf@cobra.jpl.nasa.gov"
+alias marsbrd1="ssh chriswoodruff@marsbrd1.jpl.nasa.gov"
+alias odo="ssh cwoodruf@odo.jpl.nasa.gov"
+alias timphase="ssh cwoodruf@timphase.jpl.nasa.gov"
+alias tyr="ssh cwoodruf@tyr.jpl.nasa.gov"
 alias yeti='ssh cwoodruf@yeti.homelinux.com'
 
 
