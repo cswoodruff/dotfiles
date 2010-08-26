@@ -13,11 +13,16 @@ set ruler               " show the cursor position all the time
 set number
 set hidden              " Allow switching of buffers without saving
 set scrolloff=0         " Keep the cursor from getting to the edge
+set nowrap              " Prevent autowrapping text at screen edge
 
 if has("gui_running")   " GUI is running or is about to start.
-"    set lines=85 columns=100 
+    " This is a gui Vim.
     set guioptions-=T
     set guioptions-=m
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
 else
     " This is console Vim.
     if(&term == 'rxvt-256color' || &term =~? '^screen')
@@ -35,7 +40,7 @@ syntax on
 "============================================================================
 " Colors
 "----------------------------------------------------------------------------
-colorscheme vylight
+colorscheme csw
 
 "============================================================================
 " Presentation
@@ -51,8 +56,8 @@ set splitbelow          " sb:  splitted window appears below current one
 "============================================================================
 " Statusline, Ruler
 "----------------------------------------------------------------------------
-"set laststatus=2        " ls:  always put a status line
-"set statusline=%([%-n]%y%1*%m%*\ %f%R%)\ %{CurrSubName()}\ %=\ %(%l,%c%V\ %P\ [0x%02.2B]%)
+set laststatus=2        " ls:  always put a status line
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 "hi User1 term=inverse,bold cterm=bold ctermfg=red ctermbg=white
 "set maxfuncdepth=1000   " Need more depth for sub names
 
@@ -69,9 +74,10 @@ set wildignore=*~,#*#,*.sw?,*.o,*.class,*.java.html,*.cgi.html,*.html.html,.vimi
 "----------------------------------------------------------------------------
 set incsearch           " is:  show partial matches as search is entered
 set hlsearch            " hls:  highlight search patterns
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>    " space bar clears highlighting
 set ignorecase          " Ignore case distinction when searching
 set smartcase           " ... unless there are capitals in the search string.
-"set nowrapscan          " Don't wrap to top of buffer when searching
+set nowrapscan          " Don't wrap to top of buffer when searching
 
 "============================================================================
 " Tab Standards

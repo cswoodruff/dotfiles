@@ -9,6 +9,7 @@ set -o vi   # turn on vi key bindings for readline
 # PATH variable
 export PATH=$PATH:/opt/mentor/modelsim6.6b/modeltech/linux_x86_64:$HOME/bin
 
+export EDITOR=vim
 
 # Code locations
 #export HDL_LIB=$HOME/sandbox/hdl_lib/trunk/
