@@ -89,7 +89,7 @@ vicious.register(netwidget, vicious.widgets.net, "NET ${eth0 up_kb}/${eth0 down_
  
 volumewidget = widget({ type = "textbox" })
 volumewidget.width, volumewidget.align = 60, "center"
-vicious.register(volumewidget, vicious.widgets.volume, "VOL $2$1", 1, "PCM")
+vicious.register(volumewidget, vicious.widgets.volume, "VOL $2$1", 1, "Master")
 
 uptimewidget = widget({ type = "textbox" })
 uptimewidget.width, uptimewidget.align = 40, "center"
@@ -102,6 +102,7 @@ mysystray = widget({ type = "systray" })
 
 -- Create a wibox for each screen and add it
 mywibox = {}
+mywibox_bottom = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
@@ -158,6 +159,7 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox_bottom[s] = awful.wibox({ position = "bottom", screen = s })
 
     -- Create a table with widgets that go to the right
     right_aligned = {
@@ -178,9 +180,15 @@ for s = 1, screen.count() do
         mytaglist[s],
         mypromptbox[s],
         right_aligned,
-        mytasklist[s],
+--        mytasklist[s],
         layout = awful.widget.layout.horizontal.leftright,
         height = mywibox[s].height
+    }
+
+    mywibox_bottom[s].widgets = {
+        mytasklist[s],
+        layout = awful.widget.layout.horizontal.leftright,
+        height = mywibox_bottom[s].height
     }
 end
 -- }}}
@@ -254,9 +262,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,         }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
     awful.key({ modkey, "Shift" }, "Print", function () awful.util.spawn("scrot -s -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
     
-    awful.key({                 }, "XF86AudioMute",        function () awful.util.spawn("amixer sset PCM toggle") end),
-    awful.key({                 }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer sset PCM 1dB+")   end),
-    awful.key({                 }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer sset PCM 1dB-")   end)
+    awful.key({                 }, "XF86AudioMute",        function () awful.util.spawn("amixer set Master toggle") end),
+    awful.key({                 }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 1+")   end),
+    awful.key({                 }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 1-")   end)
 )
 
 clientkeys = awful.util.table.join(
@@ -335,12 +343,12 @@ awful.rules.rules = {
     --   properties = { floating = true } },
 
     --   My Rules
-    { rule = { class = "Lanikai" },
-      properties = { tag = tags[1][2] } },
     { rule = { class = "matlab" },
       properties = { tag = tags[1][3] } },
     { rule = { class = "modelsim" },
-      properties = { tag = tags[1][5] } }
+      properties = { tag = tags[1][5] } },
+    { rule = { class = "Lanikai" },
+      properties = { tag = tags[1][6] } }
 }
 -- }}}
 
