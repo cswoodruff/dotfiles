@@ -4,6 +4,7 @@
 #
 # Executed by startx (run your window manager from here)
 
-xmodmap .Xmodmap
+/usr/bin/xmodmap .Xmodmap
+/usr/bin/xscreensaver -no-splash &
 
 exec awesome
