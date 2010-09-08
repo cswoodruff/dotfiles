@@ -17,6 +17,7 @@ set -o vi   # turn on vi key bindings for readline
 export PATH=$PATH:/opt/mentor/modelsim6.6b/modeltech/linux_x86_64:$HOME/bin
 
 export EDITOR=vim
+export VISUAL=vim
 
 # Code locations
 #export HDL_LIB=$HOME/sandbox/hdl_lib/trunk/
@@ -32,7 +33,7 @@ export ARCH=linux64
 alias ls='ls --color=auto'
 alias pkgbk='comm -23 <(clyde -Qeq) <(clyde -Qmq) > ~/backup/pkglist; clyde -Qmq > ~/backup/pkglist_aur'
 alias etckeeper='sudo etckeeper'
-
+alias lock='xscreensaver-command -lock'
 
 # SSH
 alias abidyne="ssh cwoodruf@abidyne.jpl.nasa.gov"
