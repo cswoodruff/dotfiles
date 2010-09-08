@@ -1,2 +1,5 @@
 [core]
 	excludesfile = /home/cwoodruf/.gitignore_global
+[user]
+	name = Christopher Woodruff
+	email = cswoodruff@gmail.com
