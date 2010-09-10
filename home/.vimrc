@@ -85,7 +85,7 @@ set nowrapscan          " Don't wrap to top of buffer when searching
 set tabstop=4 
 set softtabstop=4 
 set shiftwidth=4 
-set expandtab 
+set noexpandtab 
 
 "============================================================================
 " Sessions
