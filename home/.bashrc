@@ -3,9 +3,9 @@
 
 #PS1='[\u@\h \W]\$ '
 if [ -z "$SSH_CLIENT" ]; then
-    PS1="\u@\e[1;34m\h:\e[m\w\$ "
+    PS1='\u@\[\e[1;34m\]\h:\[\e[m\]\w\$ '
 else
-    PS1="\u@\e[1;32m\h:\e[m\w\$ "
+    PS1='\u@\[\e[1;32m\]\h:\[\e[m\]\w\$ '
 fi
 
 source ~/.keychain/$HOSTNAME-sh
