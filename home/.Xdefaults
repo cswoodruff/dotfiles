@@ -8,10 +8,10 @@ XTerm*termName: xterm-256color
 URxvt*termName: rxvt-256color
 
 ! Set font
-*font: xft:Deja Vu Sans Mono:pixelsize=12
-*boldFont: xft:Deja Vu Sans Mono:pixelsize=12
-!*font: xft:Inconsolata:pixelsize=14
-!*boldFont: xft:Inconolata:bold:pixelsize=14
+!*font: xft:Deja Vu Sans Mono:pixelsize=12
+!*boldFont: xft:Deja Vu Sans Mono:pixelsize=12
+!*font: xft:Inconsolata:pixelsize=16
+!*boldFont: xft:Inconolata:bold:pixelsize=16
 !*font: xft:Consolas:pixelsize=12:antialias=true
 !*boldFont: xft:Consolas:bold:pixelsize=12:antialias=true
 !*font: xft:Bitstream Vera Sans Mono:pixelsize=12
@@ -22,3 +22,5 @@ URxvt*scrollBar: false
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/chromium
 URxvt.matcher.button:   1 
+URxvt.font: xft:Deja Vu Sans Mono:pixelsize=12
+URxvt.boldFont: xft:Deja Vu Sans Mono:pixelsize=12

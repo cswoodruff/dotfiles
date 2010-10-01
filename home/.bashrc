@@ -21,7 +21,7 @@ export VISUAL=vim
 
 # Code locations
 #export HDL_LIB=$HOME/sandbox/hdl_lib/trunk/
-export HDL_LIB=$HOME/sandbox/hdl_lib/branches/feature_iq_sampler/
+export HDL_LIB=$HOME/sandbox/hdl_lib/branches/piddp/feature_dataless/
 export PIDDP_DIR=$HOME/sandbox/piddp/trunk/
 
 export CXX=g++
@@ -36,20 +36,20 @@ alias etckeeper='sudo etckeeper'
 alias lock='xscreensaver-command -lock'
 
 # SSH
-alias abidyne="ssh cwoodruf@abidyne.jpl.nasa.gov"
-alias cobra="ssh cwoodruf@cobra.jpl.nasa.gov"
-alias marsbrd1="ssh chriswoodruff@marsbrd1.jpl.nasa.gov"
-alias odo="ssh cwoodruf@odo.jpl.nasa.gov"
-alias timphase="ssh cwoodruf@timphase.jpl.nasa.gov"
-alias tyr="ssh cwoodruf@tyr.jpl.nasa.gov"
-alias yeti='ssh cwoodruf@yeti.homelinux.com'
+alias abidyne="ssh -Y cwoodruf@abidyne.jpl.nasa.gov"
+alias cobra="ssh -Y cwoodruf@cobra.jpl.nasa.gov"
+alias marsbrd1="ssh -Y chriswoodruff@marsbrd1.jpl.nasa.gov"
+alias odo="ssh -Y cwoodruf@odo.jpl.nasa.gov"
+alias timphase="ssh -Y cwoodruf@timphase.jpl.nasa.gov"
+alias tyr="ssh -Y cwoodruf@tyr.jpl.nasa.gov"
+alias yeti='ssh -Y cwoodruf@yeti.homelinux.com'
 
 
 # Programs
 #alias ise11="export LM_LICENSE_FILE=2200@dhub-lmgr1,2200@dhub-lmgr2,2200@dhub-lmgr3 && source /opt/xilinx/11.1/settings64.sh"
 alias ise12="export LM_LICENSE_FILE=2200@dhub-lmgr1,2200@dhub-lmgr2,2200@dhub-lmgr3 && source /opt/xilinx/12.2/ISE_DS/settings64.sh"
 alias matlab="export LM_LICENSE_FILE=7282@cae-lmgr6,7282@cae-lmgr7,7282@cae-lmgr8 && /usr/local/bin/matlab -nosplash"     #-nodesktop
-alias modelsim="export LM_LICENSE_FILE=2020@dhub-lmgr1,2020@dhub-lmgr2,2020@dhub-lmgr3 && vsim"
+alias vsim="export LM_LICENSE_FILE=2020@dhub-lmgr1,2020@dhub-lmgr2,2020@dhub-lmgr3 && vsim"
 
 
 # Sudo for clyde

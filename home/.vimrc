@@ -16,21 +16,21 @@ set scrolloff=0         " Keep the cursor from getting to the edge
 set nowrap              " Prevent autowrapping text at screen edge
 
 if has("gui_running")   " GUI is running or is about to start.
-    " This is a gui Vim.
-    set guioptions-=T
-    set guioptions-=m
-    set guioptions-=r
-    set guioptions-=R
-    set guioptions-=l
-    set guioptions-=L
+	" This is a gui Vim.
+	set guioptions-=T
+	set guioptions-=m
+	set guioptions-=r
+	set guioptions-=R
+	set guioptions-=l
+	set guioptions-=L
 else
-    " This is console Vim.
-    if(&term == 'rxvt-256color' || &term =~? '^screen')
-        " On my machine, I use urxvt with 256 color support
-        set t_Co=256
-    endif
+	" This is console Vim.
+	if(&term == 'rxvt-256color' || &term =~? '^screen')
+		" On my machine, I use urxvt with 256 color support
+		set t_Co=256
+	endif
 endif
-                        
+
 
 filetype on
 filetype plugin on
@@ -85,7 +85,7 @@ set nowrapscan          " Don't wrap to top of buffer when searching
 set tabstop=4 
 set softtabstop=4 
 set shiftwidth=4 
-set noexpandtab 
+set expandtab 
 
 "============================================================================
 " Sessions

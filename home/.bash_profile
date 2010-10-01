@@ -4,4 +4,5 @@
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && \
     . $HOME/.keychain/$HOSTNAME-sh
 
+. $HOME/.profile
 . $HOME/.bashrc

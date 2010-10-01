@@ -145,4 +145,7 @@
 # *.png = svn:mime-type=image/png
 # *.jpg = svn:mime-type=image/jpeg
 # Makefile = svn:eol-style=native
+#
 
+*.v = svn:keywords=Author Date Id Rev URL;svn:eol-style=native
+*.vhd = svn:keywords=Author Date Id Rev URL;svn:eol-style=native
