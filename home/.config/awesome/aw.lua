@@ -152,10 +152,10 @@ for s = 1, screen.count() do
                            awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
     -- Create a taglist widget
-    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, mytaglist.buttons)
 
     -- Create a tasklist widget
-    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
+    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.label.currenttags, mytasklist.buttons)
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
@@ -166,13 +166,13 @@ for s = 1, screen.count() do
         layout = awful.widget.layout.horizontal.rightleft
     }
     if s == 1 then table.insert(right_aligned, mysystray) end
-    table.insert(right_aligned, cpuwidget)
-    table.insert(right_aligned, memwidget)
-    table.insert(right_aligned, netwidget)
-    table.insert(right_aligned, uptimewidget)
-    table.insert(right_aligned, volumewidget)
-    table.insert(right_aligned, datewidget)
     table.insert(right_aligned, mylayoutbox[s])
+    table.insert(right_aligned, datewidget)
+    table.insert(right_aligned, volumewidget)
+    table.insert(right_aligned, uptimewidget)
+    table.insert(right_aligned, netwidget)
+    table.insert(right_aligned, memwidget)
+    table.insert(right_aligned, cpuwidget)
 
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
