@@ -339,14 +339,7 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    -- { rule = { class = "gimp" },
-    --   properties = { floating = true } },
-
     --   My Rules
-    { rule = { class = "matlab" },
-      properties = { tag = tags[1][3] } },
-    { rule = { class = "modelsim" },
-      properties = { tag = tags[1][5] } },
     { rule = { class = "Lanikai" },
       properties = { tag = tags[1][6] } }
 }
