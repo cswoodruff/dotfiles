@@ -1,0 +1,43 @@
+
+?
+mkdir prj
+edit
+s
+shell
+bash
+shell bash
+search desk
+search veri
+search 
+delete seriously? y
+shell 
+filter 
+rename wave_trasic.do
+mkdir test_gps
+mkdir test_random
+mkdir test_overflow
+mkdir test_coverage
+mkdir matlab
+rename test_gps.m
+search gps
+open_with xxd | less
+open_with epdfview &
+unmark 
+unmark all
+open_with epdfview
+search doc
+S
+open_with 
+search config
+search ranger
+shell svn up
+mkdir test_trasic
+rename trasic_params.m
+mkdir build
+open_with vim
+search gen
+delete 
+rename ca_code_mem.v
+search nco
+search trac
+

@@ -1,0 +1,10 @@
+[Global]
+ShowFrame=false
+Rows=1
+
+[Applications]
+orage=false
+pidgin=false
+vlc=false
+polkit-gnome-authentication-agent-1=false
+

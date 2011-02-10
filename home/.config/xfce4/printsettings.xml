@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE printsettings SYSTEM "printsettings.dtd">
+
+<printsettings>
+	<sheets mode="portrait" major="cols" cols="1" rows="1" papersize="A4dj" borders="false" reverse="false" />
+	<vpages tabsize="8" nonprtfmt="caret" />
+	<pprint highlight="normal" strip="0" />
+	<input encoding="iso1" cut="true" interpret="true" binary="false" />
+	<headings headers="false" header="%a" underlay="" ctitle="#?1|$t1|$n|" ltitle="#?2||$e $T|" rtitle="#?2|$t2|$Q|" cfooter="#?l|#!s-$f-, -||" lfooter="#?l!%E!#?v|%E|%s./%s#|!" rfooter="#?l!%s./%s#!#?v|%s./%s#|%E|!" />
+</printsettings>

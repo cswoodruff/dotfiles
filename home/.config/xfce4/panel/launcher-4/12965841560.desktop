@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Editor
+Comment=Edit text files
+Icon=accessories-text-editor
+Exec=gvim
+Path=/home/cwoodruf
+Terminal=false
+StartupNotify=true
+
