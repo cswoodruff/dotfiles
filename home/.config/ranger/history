@@ -1,23 +1,3 @@
-
-?
-mkdir prj
-edit
-s
-shell
-bash
-shell bash
-search desk
-search veri
-search 
-delete seriously? y
-shell 
-filter 
-rename wave_trasic.do
-mkdir test_gps
-mkdir test_random
-mkdir test_overflow
-mkdir test_coverage
-mkdir matlab
 rename test_gps.m
 search gps
 open_with xxd | less
@@ -36,8 +16,35 @@ rename trasic_params.m
 mkdir build
 open_with vim
 search gen
-delete 
 rename ca_code_mem.v
 search nco
 search trac
+search pidd
+search grip
+rename apps.py.backup
+chmod a-x
+chmod 666
+chmod 644
+search *.dat
+search .bat
+search dat
+w
+rename manageCode.m.old
+rename manageCode2.m
+rename manageCode.m
+search param
+delete 
+rename smt351_top.v
+search read
+delete seriously? y
+urxvtc &
+!urxvtc&
+terminal 
+shell make all s
+find make
+find us
+find avnettoppar
+search avne
+! urxvtc
+shell -d urxvtc
 

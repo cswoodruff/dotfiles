@@ -15,7 +15,9 @@
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="7"/>
+        <value type="int" value="16"/>
         <value type="int" value="8"/>
+        <value type="int" value="21"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
         <value type="int" value="11"/>
@@ -36,6 +38,7 @@
       <property name="autohide" type="bool" value="false"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="13"/>
+        <value type="int" value="15"/>
         <value type="int" value="14"/>
       </property>
       <property name="horizontal" type="bool" value="true"/>
@@ -93,13 +96,16 @@
       <property name="flat-buttons" type="bool" value="true"/>
       <property name="show-handle" type="bool" value="true"/>
       <property name="include-all-monitors" type="bool" value="false"/>
+      <property name="show-wireframes" type="bool" value="true"/>
     </property>
     <property name="plugin-8" type="string" value="systray">
       <property name="show-frame" type="bool" value="false"/>
       <property name="rows" type="uint" value="1"/>
       <property name="names-visible" type="array">
+        <value type="string" value="opera"/>
         <value type="string" value="orage"/>
         <value type="string" value="pidgin"/>
+        <value type="string" value="task manager"/>
       </property>
     </property>
     <property name="plugin-9" type="string" value="separator">
@@ -107,7 +113,7 @@
     </property>
     <property name="plugin-10" type="string" value="clock">
       <property name="mode" type="uint" value="2"/>
-      <property name="digital-format" type="string" value="%r"/>
+      <property name="digital-format" type="string" value="%m/%d %r"/>
       <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
       <property name="show-frame" type="bool" value="false"/>
       <property name="show-seconds" type="bool" value="false"/>
@@ -115,6 +121,7 @@
       <property name="show-meridiem" type="bool" value="false"/>
       <property name="flash-separators" type="bool" value="false"/>
       <property name="true-binary" type="bool" value="false"/>
+      <property name="fuzziness" type="uint" value="0"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
@@ -134,5 +141,8 @@
       <property name="show-names" type="bool" value="false"/>
       <property name="workspace-scrolling" type="bool" value="true"/>
     </property>
+    <property name="plugin-16" type="string" value="weather"/>
+    <property name="plugin-15" type="string" value="separator"/>
+    <property name="plugin-21" type="string" value="mailwatch"/>
   </property>
 </channel>

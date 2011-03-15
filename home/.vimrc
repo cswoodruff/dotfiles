@@ -1,6 +1,7 @@
 "============================================================================
 " General settings
 "----------------------------------------------------------------------------
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 set nocompatible        " nocp:  turn off vi compatibility
 set undolevels=1000     " ul:  lots and lots of undo
 set history=1000        " hi:  size of :command history
@@ -31,11 +32,15 @@ else
 	endif
 endif
 
-
 filetype on
 filetype plugin on
 filetype indent on
 syntax on 
+
+" LaTeX Suite stuff
+filetype plugin indent on
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
 
 "============================================================================
 " Colors
