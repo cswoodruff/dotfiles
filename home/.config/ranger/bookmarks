@@ -1,5 +1,3 @@
 h:/home/cwoodruf
-s:/home/cwoodruf/sandbox
-e:/etc
-w:/home/cwoodruf/sandbox/piddp/trunk/reg_test
-':/home/cwoodruf
+t:/home/cwoodruf/sandbox/piddp/trunk/pm_verilog
+':/home/cwoodruf/downloads/strs/JPL_STRS_Release1.0

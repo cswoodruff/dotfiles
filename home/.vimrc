@@ -37,6 +37,9 @@ filetype plugin on
 filetype indent on
 syntax on 
 
+" Snippets
+let g:snips_author="Chris Woodruff"
+
 " LaTeX Suite stuff
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*

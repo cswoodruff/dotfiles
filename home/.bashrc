@@ -19,9 +19,10 @@ export PATH=$PATH:/home/cwoodruf/bin:/opt/mentor/modelsim6.6b/modeltech/linux_x8
 
 export EDITOR=vim
 export VISUAL=vim
-export BROWSER=opera
+export BROWSER=chromium
 
 # Code locations
+#export MATLABPATH='/home/cwoodruf/matlab:/home/cwoodruf/sandbox/matlab_lib/trunk'
 export XILINX_MAKEFILE=$HOME/xilinx/xilinx_makefile.mk
 export HDL_LIB=$HOME/sandbox/hdl_lib/trunk
 #export HDL_LIB=$HOME/sandbox/hdl_lib/branches/piddp/feature_dataless
@@ -32,24 +33,32 @@ export CXX=g++
 export SYSTEMC=/usr/local/systemc-2.2
 export ARCH=linux64
 
-export FIGNORE=.svn     # prevents completion of svn directories
+export FIGNORE=.svn     # prevents bash completion of svn directories
 
 # Aliases
 alias ls='ls --color=auto'
-alias pkgbk='comm -23 <(clyde -Qeq) <(clyde -Qmq) > ~/backup/pkglist; clyde -Qmq > ~/backup/pkglist_aur'
+alias pkgbk='comm -23 <(pacman -Qeq) <(pacman -Qmq) > ~/backup/pkglist; pacman -Qmq > ~/backup/pkglist_aur'
 alias etckeeper='sudo etckeeper'
 alias keys='xmodmap ~/.Xmodmap'
 alias lock='xscreensaver-command -lock'
 alias open='xdg-open'
+alias mount_nearspace='sudo mount.cifs //nearspace1/cwoodruf /home/cwoodruf/nearspace -o username=cwoodruf,uid=cwoodruf,gid=users'
+alias aoeu='setxkbmap us && xmodmap ~/.Xmodmap'
+alias asdf='setxkbmap dvorak && xmodmap ~/.Xmodmap'
 
 # SSH
 alias abidyne="ssh -Y cwoodruf@abidyne.jpl.nasa.gov"
 alias cobra="ssh -Y cwoodruf@cobra.jpl.nasa.gov"
-alias marsbrd1="ssh -Y chriswoodruff@marsbrd1.jpl.nasa.gov"
 alias odo="ssh -Y cwoodruf@odo.jpl.nasa.gov"
 alias timphase="ssh -Y cwoodruf@timphase.jpl.nasa.gov"
+alias tadder="ssh -Y cwoodruf@tadder.jpl.nasa.gov"
 alias tyr="ssh -Y cwoodruf@tyr.jpl.nasa.gov"
+alias marsbrd1="ssh -Y chriswoodruff@marsbrd1.jpl.nasa.gov"
+alias dline="ssh -Y cwoodruf@dline08.jpl.nasa.gov"
 alias yeti='ssh -Y cwoodruf@yeti.homelinux.com'
+alias connectlinux='ssh -Y cwoodruf@connect335linux.jpl.nasa.gov'
+alias connectwin='rdesktop -g 1440x900 -P -z -x l -r sound:off -u cwoodruf connect335win:3389'
+
 
 
 # Programs
@@ -59,6 +68,8 @@ alias ise13="export LM_LICENSE_FILE=2200@dhub-lmgr1,2200@dhub-lmgr2,2200@dhub-lm
 alias synpro="export LM_LICENSE_FILE=9998@dhub-lmgr1,9998@dhub-lmgr2,9998@dhub-lmgr3 && synplify_pro"
 alias matlab="export LM_LICENSE_FILE=7282@cae-lmgr6,7282@cae-lmgr7,7282@cae-lmgr8 && /usr/local/bin/matlab -nosplash"     #-nodesktop
 alias vsim="export LM_LICENSE_FILE=2020@dhub-lmgr1,2020@dhub-lmgr2,2020@dhub-lmgr3 && vsim"
+alias pacman="sudo pacman"
+alias chainsaw="/home/cwoodruf/bin/chainsaw_2_1/bin/chainsaw"
 
 
 # Sudo for clyde
