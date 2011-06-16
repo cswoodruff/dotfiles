@@ -16,39 +16,37 @@ set hidden              " Allow switching of buffers without saving
 set scrolloff=0         " Keep the cursor from getting to the edge
 set nowrap              " Prevent autowrapping text at screen edge
 
-if has("gui_running")   " GUI is running or is about to start.
-	" This is a gui Vim.
+" This is console Vim.
+if(&term == 'linux')
+    let g:CSApprox_loaded=1
+    colorscheme default
+else
+    set t_Co=256    "use with 256 color support
+    colorscheme csw
+endif
+
+" GUI is running or is about to start.
+if has("gui_running")   
 	set guioptions-=T
 	set guioptions-=m
 	set guioptions-=r
 	set guioptions-=R
 	set guioptions-=l
 	set guioptions-=L
-else
-	" This is console Vim.
-	if(&term == 'rxvt-256color' || &term =~? '^screen')
-		" On my machine, I use urxvt with 256 color support
-		set t_Co=256
-	endif
 endif
 
 filetype on
 filetype plugin on
 filetype indent on
+filetype plugin indent on
 syntax on 
 
 " Snippets
 let g:snips_author="Chris Woodruff"
 
 " LaTeX Suite stuff
-filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-
-"============================================================================
-" Colors
-"----------------------------------------------------------------------------
-colorscheme csw
 
 "============================================================================
 " Presentation
