@@ -4,21 +4,21 @@
 [ -z "$PS1" ] && return
 
 # Colors
-BLACK='\[\e[0;30m\]'
-RED='\[\e[1;31m\]'
-GREEN='\[\e[1;32m\]'
-YELLOW='\[\e[1;33m\]'
-BLUE='\[\e[1;34m\]'
-PURPLE='\[\e[1;35m\]'
-CYAN='\[\e[1;36m\]'
-WHITE='\[\e[1;37m\]'
-NOCOLOR='\[\e[0m\]'
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+NOCOLOR=$(tput sgr0)
 
-# Prompt
+# Prompt: blue for local login, green for ssh login
 if [ -z "$SSH_CLIENT" ]; then
-    PS1="$NOCOLOR\u@$BLUE\h:$NOCOLOR\w\$ "
+    PS1="\[$NOCOLOR\]\u@\[$BLUE\]\h:\[$NOCOLOR\]\w\$ "
 else
-    PS1="$NOCOLOR\u@$GREEN\h:$NOCOLOR\w\$ "
+    PS1="\[$NOCOLOR\]\u@\[$GREEN\]\h:\[$NOCOLOR\]\w\$ "
 fi
 
 # Set up keychain
@@ -31,26 +31,25 @@ source ~/.dircolors
 set -o vi   
 
 # Environment variables
-export PATH=$PATH:/home/cwoodruf/bin:/opt/mentor/modelsim6.6b/modeltech/linux_x86_64:/opt/synopsys/synplifypro/fpga_e201009sp3/bin
+export PATH=$PATH:/home/cwoodruf/bin:/opt/mentor/modelsim6.6b/modeltech/linux_x86_64:/opt/synopsys/synplifypro/fpga_e201009sp3/bin:/opt/altera/11.0/quartus/bin
 
 export EDITOR=vim
 export VISUAL=vim
 export BROWSER=chromium
-
-# Code locations
-#export MATLABPATH='/home/cwoodruf/matlab:/home/cwoodruf/sandbox/matlab_lib/trunk'
-export XILINX_MAKEFILE=$HOME/xilinx/xilinx_makefile.mk
-export AMD_DIR=$HOME/sandbox/amd/source
-export HDL_LIB=$HOME/sandbox/hdl_lib/trunk
-#export HDL_LIB=$HOME/sandbox/hdl_lib/branches/piddp/feature_dataless
-export PIDDP_DIR=$HOME/sandbox/piddp/trunk
-export CONNECT_DIR=$HOME/sandbox/connect
+export FIGNORE=.svn     # prevents bash completion of svn directories
 
 export CXX=g++
 export SYSTEMC=/usr/local/systemc-2.2
 export ARCH=linux64
 
-export FIGNORE=.svn     # prevents bash completion of svn directories
+# Code locations
+#export MATLABPATH='/home/cwoodruf/matlab:/home/cwoodruf/sandbox/matlab_lib/trunk'
+export XILINX_MAKEFILE=$HOME/xilinx/xilinx_makefile.mk
+export AMD_DIR=$HOME/sandbox/amd/amd_rgm/RGM_Nallatech/trunk
+export HDL_LIB=$HOME/sandbox/hdl_lib/trunk
+#export HDL_LIB=$HOME/sandbox/hdl_lib/branches/piddp/feature_dataless
+export PIDDP_DIR=$HOME/sandbox/piddp/trunk
+export CONNECT_DIR=$HOME/sandbox/connect
 
 
 # Aliases
@@ -66,6 +65,7 @@ alias asdf='setxkbmap dvorak && xmodmap ~/.Xmodmap'
 
 
 # Locations
+alias dotfiles='cd ~/.homesick/repos/dotfiles/home'
 alias amd='cd ~/sandbox/amd'
 alias connect='cd ~/sandbox/connect'
 alias hdl='cd ~/sandbox/hdl_lib/trunk'
@@ -88,13 +88,13 @@ alias connectwin='rdesktop -g 1440x900 -P -z -x l -r sound:off -u cwoodruf conne
 
 
 # Programs
+alias chainsaw="/home/cwoodruf/bin/chainsaw_2_1/bin/chainsaw"
 alias ise10="export LM_LICENSE_FILE=2200@dhub-lmgr1,2200@dhub-lmgr2,2200@dhub-lmgr3 && source /opt/xilinx/10.1/ISE/settings64.sh"
 alias ise12="export LM_LICENSE_FILE=2200@dhub-lmgr1,2200@dhub-lmgr2,2200@dhub-lmgr3 && source /opt/xilinx/12.3/ISE_DS/settings64.sh"
-alias ise13="export LM_LICENSE_FILE=2200@dhub-lmgr1,2200@dhub-lmgr2,2200@dhub-lmgr3 && source /opt/xilinx/13.1/ISE_DS/settings64.sh"
-alias synpro="export LM_LICENSE_FILE=9998@dhub-lmgr1,9998@dhub-lmgr2,9998@dhub-lmgr3 && synplify_pro"
+alias ise13="export LM_LICENSE_FILE=2200@dhub-lmgr1,2200@dhub-lmgr2,2200@dhub-lmgr3 && source /opt/xilinx/13.2/ISE_DS/settings64.sh"
 alias matlab="export LM_LICENSE_FILE=7282@cae-lmgr6,7282@cae-lmgr7,7282@cae-lmgr8 && /usr/local/bin/matlab -nosplash"     #-nodesktop
+alias synpro="export LM_LICENSE_FILE=9998@dhub-lmgr1,9998@dhub-lmgr2,9998@dhub-lmgr3 && synplify_pro"
 alias vsim="export LM_LICENSE_FILE=2020@dhub-lmgr1,2020@dhub-lmgr2,2020@dhub-lmgr3 && vsim"
-alias chainsaw="/home/cwoodruf/bin/chainsaw_2_1/bin/chainsaw"
 
 
 # Sudo for pacman

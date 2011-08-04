@@ -16,9 +16,12 @@ xset b off
 # Use for awesome to make Java programs play nice
 #wmname LG3D
 #exec awesome
-
-#exec gnome-session
 #exec wmii
 #exec fvwm-crystal
 #exec openbox
+#exec ck-launch-session fusion-icon
+#exec gnome-session
 exec ck-launch-session startxfce4
+
+#exec i3 --force-xinerama -V >> ~/.i3/i3log 2>&1
+#exec i3 -V >> ~/.i3/i3log 2>&1
