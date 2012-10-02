@@ -50,6 +50,7 @@ export HDL_LIB=$HOME/sandbox/hdl_lib/trunk
 #export HDL_LIB=$HOME/sandbox/hdl_lib/branches/piddp/feature_dataless
 export PIDDP_DIR=$HOME/sandbox/piddp/trunk
 export CONNECT_DIR=$HOME/sandbox/connect
+export SVN='https://timphase.jpl.nasa.gov/svn'
 
 
 # Aliases
