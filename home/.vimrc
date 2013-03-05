@@ -1,7 +1,9 @@
 "============================================================================
 " General settings
 "----------------------------------------------------------------------------
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+call pathogen#infect()
+call pathogen#helptags()
+
 set nocompatible        " nocp:  turn off vi compatibility
 set undolevels=1000     " ul:  lots and lots of undo
 set history=1000        " hi:  size of :command history
@@ -15,6 +17,7 @@ set number
 set hidden              " Allow switching of buffers without saving
 set scrolloff=0         " Keep the cursor from getting to the edge
 set nowrap              " Prevent autowrapping text at screen edge
+set ttyfast             " smoother changes
 
 " This is console Vim.
 if(&term == 'linux')
@@ -41,12 +44,34 @@ filetype indent on
 filetype plugin indent on
 syntax on 
 
+"set backupdir=$TMP//,./.backup,/tmp//   " Set temporary directory for swap files
+set directory=$TMP//,./.backup,/tmp//   " Set temporary directory for swap files
+
 " Snippets
 let g:snips_author="Chris Woodruff"
 
-" LaTeX Suite stuff
+"============================================================================
+" LaTeX
+"----------------------------------------------------------------------------
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
+
+"============================================================================
+" Doxygen
+"----------------------------------------------------------------------------
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="Christopher Woodruff"
+"let g:DoxygenToolkit_licenseTag="GPL\<enter>"
+let g:DoxygenToolkit_undocTag="DOXIGEN_SKIP_BLOCK"
+let g:DoxygenToolkit_commentType="C"
+let g:DoxygenToolkit_briefTag_funcName = "yes"
+
+"============================================================================
+" Commands
+"----------------------------------------------------------------------------
+" Sudo Write
+cmap w!! %!sudo tee > /dev/null %
 
 "============================================================================
 " Presentation
@@ -54,8 +79,7 @@ let g:tex_flavor = "latex"
 set shortmess=aIoO      " sm:  really short messages, don't show intro
 set showmode            " smd:  show the current input mode
 set more                " more:  page on extended output
-set errorbells          " eb:  ring bell on error messages
-set novisualbell        " novb:  turn of visual bell
+set noeb vb t_vb=       " turn off all audible/visual error indicators
 set noequalalways       " noea:  don't always keep windows at equal size
 set splitbelow          " sb:  splitted window appears below current one
 
@@ -84,6 +108,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>    " space bar clears highli
 set ignorecase          " Ignore case distinction when searching
 set smartcase           " ... unless there are capitals in the search string.
 set nowrapscan          " Don't wrap to top of buffer when searching
+set iskeyword-=?        " w or * excludes a question mark character from words
 
 "============================================================================
 " Tab Standards
@@ -94,14 +119,9 @@ set shiftwidth=4
 set expandtab 
 
 "============================================================================
-" Sessions
-"----------------------------------------------------------------------------
-set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
-nmap SQ <ESC>:mksession! ~/sessions/default.vim<CR>:wqa<CR>
-nmap SSA :wa<CR>:mksession! ~/sessions/
-nmap SO :wa<CR>:so ~/sessions/
-
-"============================================================================
 " Maps
 "----------------------------------------------------------------------------
 :let mapleader = ","
+
+map <Leader>nt :NERDTreeToggle<CR>
+map <Leader>tl :TlistToggle<CR>

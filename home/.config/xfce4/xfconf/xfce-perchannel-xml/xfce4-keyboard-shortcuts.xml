@@ -18,8 +18,8 @@
       <property name="XF86Sleep" type="string" value="xfce4-session-logout"/>
       <property name="Print" type="string" value="scrot -s -e &apos;mv $f ~/pictures/screenshots/&apos;"/>
       <property name="XF86AudioMute" type="string" value="amixer set Master toggle"/>
-      <property name="XF86AudioLowerVolume" type="string" value="amixer set Master 1-"/>
-      <property name="XF86AudioRaiseVolume" type="string" value="amixer set Master 1+"/>
+      <property name="XF86AudioLowerVolume" type="string" value="amixer set Master 1%- &amp;&gt; /dev/null"/>
+      <property name="XF86AudioRaiseVolume" type="string" value="amixer set Master 1%+ &amp;&gt; /dev/null"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

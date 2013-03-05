@@ -26,4 +26,7 @@
   <property name="splash" type="empty">
     <property name="Engine" type="string" value="mice"/>
   </property>
+  <property name="chooser" type="empty">
+    <property name="AlwaysDisplay" type="bool" value="false"/>
+  </property>
 </channel>

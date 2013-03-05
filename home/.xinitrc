@@ -5,12 +5,20 @@
 # Executed by startx (run your window manager from here)
 
 # Turn system beep off
-xset b off
+xset -b
 
-/usr/bin/xmodmap .Xmodmap
+# Keyboard modifications
+setxkbmap dvorak -option caps:escape -option terminate:ctrl_alt_bksp
+xbindkeys
 
+# Start screensaver
 /usr/bin/xscreensaver -no-splash &
 
+# Wallpaper
+#feh --bg-scale /home/cwoodruf/pictures/wallpaper/ArchLinux.png
+feh --bg-scale /home/cwoodruf/pictures/wallpaper/hal.jpg
+
+# Start terminal daemon
 /usr/bin/urxvtd -q -f -o
 
 # Use for awesome to make Java programs play nice
@@ -21,7 +29,7 @@ xset b off
 #exec openbox
 #exec ck-launch-session fusion-icon
 #exec gnome-session
-exec ck-launch-session startxfce4
+#exec ck-launch-session startxfce4
 
-#exec i3 --force-xinerama -V >> ~/.i3/i3log 2>&1
-#exec i3 -V >> ~/.i3/i3log 2>&1
+echo "Starting at $(date)" >> ~/.i3/i3log
+exec i3 --force-xinerama -V >> ~/.i3/i3log 2>&1

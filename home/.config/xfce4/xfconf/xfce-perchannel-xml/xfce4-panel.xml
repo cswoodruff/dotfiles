@@ -17,7 +17,6 @@
         <value type="int" value="7"/>
         <value type="int" value="16"/>
         <value type="int" value="8"/>
-        <value type="int" value="21"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
         <value type="int" value="11"/>
@@ -102,10 +101,12 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="rows" type="uint" value="1"/>
       <property name="names-visible" type="array">
-        <value type="string" value="opera"/>
         <value type="string" value="orage"/>
-        <value type="string" value="pidgin"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="fusion-icon"/>
         <value type="string" value="task manager"/>
+        <value type="string" value="opera"/>
+        <value type="string" value="pidgin"/>
       </property>
     </property>
     <property name="plugin-9" type="string" value="separator">
@@ -120,8 +121,10 @@
       <property name="show-military" type="bool" value="true"/>
       <property name="show-meridiem" type="bool" value="false"/>
       <property name="flash-separators" type="bool" value="false"/>
-      <property name="true-binary" type="bool" value="false"/>
+      <property name="true-binary" type="bool" value="true"/>
       <property name="fuzziness" type="uint" value="0"/>
+      <property name="show-grid" type="bool" value="false"/>
+      <property name="show-inactive" type="bool" value="false"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
@@ -143,6 +146,5 @@
     </property>
     <property name="plugin-16" type="string" value="weather"/>
     <property name="plugin-15" type="string" value="separator"/>
-    <property name="plugin-21" type="string" value="mailwatch"/>
   </property>
 </channel>

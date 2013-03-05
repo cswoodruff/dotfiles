@@ -1,1 +1,3 @@
 SudoEdit.vba: call delete('/home/cwoodruf/.vim/autoload/SudoEdit.vim')|call delete('/home/cwoodruf/.vim/doc/SudoEdit.txt')|call delete('/home/cwoodruf/.vim/plugin/SudoEdit.vim')
+SudoEdit-0.10.vmb: call delete('/home/cwoodruf/.vim/autoload/SudoEdit.vim')|call delete('/home/cwoodruf/.vim/doc/SudoEdit.txt')|call delete('/home/cwoodruf/.vim/plugin/SudoEdit.vim')
+SudoEdit-0.11.vmb: call delete('/home/cwoodruf/.vim/autoload/SudoEdit.vim')|call delete('/home/cwoodruf/.vim/doc/SudoEdit.txt')|call delete('/home/cwoodruf/.vim/plugin/SudoEdit.vim')

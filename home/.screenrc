@@ -1,1 +1,7 @@
+hardstatus alwayslastline
+hardstatus string '%{= wg}[ %{wB}%H %{wg}][%= %{wK}%?%-Lw%?%{wR}(%{wk}%n*%f%t%?(%u)%?%{wR})%{wK}%?%+Lw%?%?%= %{wg}][%{wk}%Y-%m-%d %{wk}%c %{wg}]'
+
+startup_message off
+vbell off
 term screen-256color
+altscreen on

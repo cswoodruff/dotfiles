@@ -2,4 +2,17 @@
 	excludesfile = /home/cwoodruf/.gitignore_global
 [user]
 	name = Christopher Woodruff
-	email = cswoodruff@gmail.com
+	email = christopher.s.woodruff@jpl.nasa.gov
+[alias]
+    lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(black)%s%C(reset) %C(bold black)? %an%C(reset)%C(bold red)%d%C(reset)' --abbrev-commit --date=relative
+    lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold red)%d%C(reset)%n''          %C(black)%s%C(reset) %C(bold black)? %an%C(reset)' --abbrev-commit
+    lg = !"git lg1"
+	br = branch
+	ci = commit
+	co = checkout
+	cb = checkout -b
+	df = diff
+	master = checkout master
+	st = status
+[push]
+	default = simple
