@@ -16,3 +16,5 @@
 	st = status
 [push]
 	default = simple
+[diff]
+	tool = vimdiff
