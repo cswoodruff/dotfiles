@@ -21,9 +21,34 @@ else
     PS1="\[$NOCOLOR\]\u@\[$GREEN\]\h:\[$NOCOLOR\]\w\$ "
 fi
 
-
 # Turn on vi key bindings for readline
 set -o vi   
+
+# Set up keychain
+source ~/.keychain/`uname -n`-sh
+
+# Set up directory listing colors
+eval `dircolors ~/.dircolors`
+
+# Environment variables
+export PATH=$PATH:/home/cwoodruf/bin:/home/cwoodruf/.gem/ruby/1.9.1/bin
+export PAGER=/usr/bin/less
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+export BROWSER=/usr/bin/chromium
+export BUP_DIR=/media/BACKUP
+export TMP=$HOME/tmp
+export FIGNORE=.svn     # prevents bash completion of svn directories
+export CXX=g++
+export ARCH=linux64
+
+# Code locations
+#export MATLABPATH='/home/cwoodruf/matlab:/home/cwoodruf/sandbox/matlab_lib/trunk'
+export XILINX_MAKEFILE=$HOME/xilinx/xilinx_makefile.mk
+export HDL_LIB=$HOME/sandbox/hdl_lib
+export PIDDP_DIR=$HOME/sandbox/piddp/trunk
+export THREE_NOISE_TEST=$HOME/sandbox/threenoisetest
+export SVN="https://timphase/svn"
 
 # Common
 alias ls='ls --color=auto'
@@ -48,11 +73,9 @@ alias nearspace='sudo mount.cifs //nearspace1.jpl.nasa.gov/cwoodruf ~/nearspace 
 
 # Locations
 alias dotfiles='cd ~/.homesick/repos/dotfiles/home'
-alias amd='cd ~/sandbox/amd/amg_rgm'
-alias connect='cd ~/sandbox/connect'
 alias hdl='cd ~/sandbox/hdl_lib'
 alias piddp='cd ~/sandbox/piddp'
-alias lri='cd ~/sandbox/lri'
+alias soc='cd ~/soc/grlib/designs/leon3-xilinx-kc705'
 
 
 # SSH
@@ -63,7 +86,7 @@ alias dline07='ssh -Y cwoodruf@dline07.jpl.nasa.gov'
 alias dline08='ssh -Y cwoodruf@dline08.jpl.nasa.gov'
 alias dline09='ssh -Y cwoodruf@dline09.jpl.nasa.gov'
 alias gfoarch='ssh -Y cwoodruf@gfoarch.jpl.nasa.gov'
-alias lrp0='rdesktop -g 2560x1600 -P -z -x l -r sound:off -u cwoodruf lrp0:3389'
+alias lrp0='rdesktop -g 2560x1600 -P -z -x l -r sound:off -d JPL -u cwoodruf lrp0:3389'
 alias marsbrd1='ssh -Y chriswoodruff@marsbrd1.jpl.nasa.gov'
 alias tadder='ssh -Y cwoodruf@tadder.jpl.nasa.gov'
 alias thor='ssh -Y cwoodruf@thor.jpl.nasa.gov'
@@ -72,33 +95,6 @@ alias yeti='ssh -Y cwoodruf@yeti.homelinux.com'
 
 
 # Programs
-alias rtems4.10='export PATH=/opt/rtems-4.10/bin:/opt/sparc-elf-4.6.0/bin:$PATH'
-alias accurev='export PATH=/opt/accurev/bin:$PATH'
-alias altera='export PATH=/opt/altera/11.0/quartus/bin:$PATH'
-alias atrenta='export PATH=/opt/Atrenta/SpyGlass-5.0.0.3/SPYGLASS_HOME/bin:$PATH'
-alias synopsys='export PATH=/opt/synopsys/G-2012.09-SP1/bin:$PATH'
-alias ise10.1='source /opt/Xilinx/10.1/ISE/settings64.sh'
-alias ise12.4='source /opt/Xilinx/12.4/ISE_DS/settings64.sh'
-alias ise13.2='source /opt/Xilinx/13.2/ISE_DS/settings64.sh'
-alias ise13.4='source /opt/Xilinx/13.4/ISE_DS/settings64.sh'
-alias ise14.2='source /opt/Xilinx/14.2/ISE_DS/settings64.sh'
-alias vivado14.2='export PATH=/opt/Xilinx/Vivado/2012.4/bin:$PATH'
-alias libero10.0='export PATH=/opt/microsemi/Libero_v10.0/Libero/bin:$PATH'
-alias libero10.1='export PATH=/opt/microsemi/Libero_v10.1/Libero/bin:$PATH'
-alias modelsim10.0c='export PATH=/opt/mentor/modelsimse10.0c/modeltech/bin:$PATH'
-alias modelsim10.1d='export PATH=/opt/mentor/modelsimse10.1d/modeltech/bin:$PATH'
-alias modelsim10.2='export PATH=/opt/mentor/modelsimse10.2/modeltech/bin:$PATH'
-alias questa10.1d='export PATH=/opt/mentor/questa10.1d/questasim/bin:$PATH'
-alias questa10.2='export PATH=/opt/mentor/questa10.2_1/questasim/bin:$PATH'
-alias gaisler='export GRMON_SHARE=/opt/gaisler/grmon-eval-2.0.33/linux/share && export LD_LIBRARY_PATH=/opt/gaisler/grmon-eval-2.0.33/linux/lib:$LD_LIBRARY_PATH && export PATH=/opt/gaisler/grmon-eval-2.0.33/linux/bin:$PATH'
-#alias matlabr2011a='export PATH=/opt/MATLAB/R2011a/bin:$PATH'
-alias matlabr2012b='export PATH=/opt/MATLAB/R2012b/bin:$PATH'
-alias magicdraw='export PATH=/opt/magicdraw/17.0.1/bin:$PATH'
-alias syscntrltools='export PATH=/opt/Atrenta/SpyGlass-5.0.0.3/SPYGLASS_HOME/bin:/opt/synopsys/G-2012.09-SP1/bin:/opt/microsemi/Libero_v10.0/Libero/bin:/opt/mentor/modelsimse10.1d/modeltech/bin:$PATH'
-alias sciencetools='export PATH=/opt/Atrenta/SpyGlass-5.0.0.3/SPYGLASS_HOME/bin:/opt/synopsys/G-2012.09-SP1/bin:/opt/synopsys/G-2012.09-SP1/bin:/opt/mentor/modelsimse10.1d/modeltech/bin:$PATH && source /opt/Xilinx/13.2/ISE_DS/settings64.sh'
-alias flighttools='export PATH=/opt/Atrenta/SpyGlass-5.0.0.3/SPYGLASS_HOME/bin:/opt/synopsys/G-2012.09-SP1/bin:/opt/microsemi/Libero_v10.0/Libero/bin:/opt/mentor/questa10.1d/questasim/bin:$PATH && source /opt/Xilinx/13.2/ISE_DS/settings64.sh'
-alias soctools='export PATH=/opt/Atrenta/SpyGlass-5.0.0.3/SPYGLASS_HOME/bin:/opt/synopsys/G-2012.09-SP1/bin:/opt/microsemi/Libero_v10.0/Libero/bin:/opt/mentor/questa10.1d/questasim/bin:/opt/Xilinx/Vivado/2012.2/bin:$PATH'
-
 alias chainsaw='/home/cwoodruf/bin/chainsaw_2_1/bin/chainsaw'
 
 
