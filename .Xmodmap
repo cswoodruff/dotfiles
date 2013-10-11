@@ -1,0 +1,12 @@
+! Change Caps_Lock to Escape
+!clear Lock
+!clear Caps_Lock
+!add Caps_Lock = Escape
+
+! Switch Alt_L and Super_L
+clear Mod1
+clear Mod4
+add mod1 = Super_L Super_R
+add mod4 = Alt_L Alt_R
+!add mod1 = Alt_L Alt_R
+!add mod4 = Super_L Super_R

@@ -1,0 +1,14 @@
+# Increase volume
+"amixer -q set PCM 1%+"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+# Decrease volume
+"amixer -q set PCM 1%-"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+# Toggle mute
+"amixer -q set PCM toggle"
+    m:0x0 + c:121
+    XF86AudioMute

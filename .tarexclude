@@ -1,0 +1,11 @@
+*.o
+*.bit
+*.swp
+
+**/.cache
+.thunderbird/**/*Mail
+.gvfs
+
+downloads
+sandbox
+nearspace
