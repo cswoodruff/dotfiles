@@ -38,6 +38,9 @@ if has("gui_running")
 	set guioptions-=L
 endif
 
+set fileformat=unix
+set fileformats=unix
+
 filetype on
 filetype plugin on
 filetype indent on

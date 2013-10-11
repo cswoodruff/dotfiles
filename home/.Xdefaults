@@ -24,3 +24,4 @@ URxvt.urlLauncher:      /usr/bin/chromium
 URxvt.matcher.button:   1 
 URxvt.font: xft:Deja Vu Sans Mono:pixelsize=12
 URxvt.boldFont: xft:Deja Vu Sans Mono:pixelsize=12
+URxvt.searchable-scrollback: CM-s

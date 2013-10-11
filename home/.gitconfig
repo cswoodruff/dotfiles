@@ -1,20 +1,63 @@
 [core]
+    editor=/usr/bin/vim
 	excludesfile = /home/cwoodruf/.gitignore_global
+	autocrlf = input
+    pager=less -x4
 [user]
 	name = Christopher Woodruff
 	email = christopher.s.woodruff@jpl.nasa.gov
 [alias]
+    # logging
     lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(black)%s%C(reset) %C(bold black)? %an%C(reset)%C(bold red)%d%C(reset)' --abbrev-commit --date=relative
     lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold red)%d%C(reset)%n''          %C(black)%s%C(reset) %C(bold black)? %an%C(reset)' --abbrev-commit
     lg = !"git lg1"
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    le = log --oneline --decorate
+    fl = log -u
+
+    # history
+    dl = "!git ll -1"
+    dlc = diff --cached HEAD^
+    dr  = "!f() { git diff "$1"^.."$1"; }; f"
+    lc  = "!f() { git ll "$1"^.."$1"; }; f"
+    diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+
+    # search
+    f = "!git ls-files | grep -i"
+    gr = grep -Ii
+    gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
+
+    # stash
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+
+    # common
 	br = branch
 	ci = commit
 	co = checkout
 	cb = checkout -b
 	df = diff
+    dt = difftool
+    hash = rev-parse --short HEAD
 	master = checkout master
 	st = status
+    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    lineendings = !git rm --cached -r . && git reset --hard && git add . && git commit -m "Normalize line endings"
+    la = "!git config -l | grep alias | cut -c 7-"
 [push]
-	default = simple
+	default = upstream
+[pull]
+    default = current
 [diff]
 	tool = vimdiff
+    guitool = gvimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = fugitive
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"

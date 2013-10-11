@@ -25,7 +25,7 @@ fi
 set -o vi   
 
 # Set up keychain
-source ~/.keychain/`uname -n`-sh
+[[ $(type -P "keychain") ]] && source ~/.keychain/`uname -n`-sh
 
 # Set up directory listing colors
 eval `dircolors ~/.dircolors`
@@ -63,12 +63,13 @@ alias aoeu='setxkbmap us'
 alias asdf='setxkbmap dvorak'
 alias mirrors='sudo reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist'
 alias vi='vim'
+alias gitk='gitk --all'
 
 
 # Remote Mounts
-alias windows='sudo mount -t ntfs-3g /dev/sdc1 /mnt/windows'
-alias gfolri='sudo mount.cifs //gfolri/share /mnt/gfolri -o username=cwoodruf,credentials=/home/cwoodruf/.cifs_credentials,uid=cwoodruf'
-alias nearspace='sudo mount.cifs //nearspace1.jpl.nasa.gov/cwoodruf ~/nearspace -o workgroup=jpl,username=cwoodruf,credentials=/home/cwoodruf/.cifs_credentials,sec=ntlmssp'
+alias mnt_windows='sudo mount -t ntfs-3g /dev/sdc1 /mnt/windows'
+alias mnt_gfolri='sudo mount.cifs //gfolri/share /mnt/gfolri -o username=cwoodruf,credentials=/home/cwoodruf/.cifs_credentials,uid=cwoodruf'
+alias mnt_nearspace='sudo mount.cifs //nearspace1.jpl.nasa.gov/cwoodruf ~/nearspace -o workgroup=jpl,username=cwoodruf,credentials=/home/cwoodruf/.cifs_credentials,sec=ntlmssp'
 
 
 # Locations
@@ -79,15 +80,16 @@ alias soc='cd ~/soc/grlib/designs/leon3-xilinx-kc705'
 
 
 # SSH
-alias abidyne='ssh -Y cwoodruf@abidyne.jpl.nasa.gov'
 alias cobra='ssh -Y cwoodruf@cobra.jpl.nasa.gov'
+alias dline='ssh -Y cwoodruf@dline08.jpl.nasa.gov'
 alias dline06='ssh -Y cwoodruf@dline06.jpl.nasa.gov'
 alias dline07='ssh -Y cwoodruf@dline07.jpl.nasa.gov'
 alias dline08='ssh -Y cwoodruf@dline08.jpl.nasa.gov'
 alias dline09='ssh -Y cwoodruf@dline09.jpl.nasa.gov'
 alias gfoarch='ssh -Y cwoodruf@gfoarch.jpl.nasa.gov'
-alias lrp0='rdesktop -g 2560x1600 -P -z -x l -r sound:off -d JPL -u cwoodruf lrp0:3389'
-alias marsbrd1='ssh -Y chriswoodruff@marsbrd1.jpl.nasa.gov'
+alias gfolri='xfreerdp -g 2560x1600 -z -x l -d JPL -u cwoodruf gfolri:3389'
+alias lrp0='xfreerdp -g 2560x1600 -z -x l -d JPL -u cwoodruf lrp0:3389'
+alias odo='ssh -Y cwoodruf@odo.jpl.nasa.gov'
 alias tadder='ssh -Y cwoodruf@tadder.jpl.nasa.gov'
 alias thor='ssh -Y cwoodruf@thor.jpl.nasa.gov'
 alias timphase='ssh -Y cwoodruf@timphase.jpl.nasa.gov'

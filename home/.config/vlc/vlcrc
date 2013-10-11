@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 2.0.4
+###  vlc 2.0.8
 ###
 
 ###
@@ -392,7 +392,7 @@ equalizer-preamp=0.000000
 #ffmpeg-hw=0
 
 # Threads (integer)
-#ffmpeg-threads=1
+#ffmpeg-threads=0
 
 # Codec name (string)
 #sout-ffmpeg-codec=
@@ -1115,6 +1115,14 @@ equalizer-preamp=0.000000
 
 # Forward Cookies (boolean)
 #http-forward-cookies=1
+
+[access_sftp] # SFTP input
+
+# Read size (integer)
+#sftp-readsize=8192
+
+# SFTP port (integer)
+#sftp-port=22
 
 [access_ftp] # FTP input
 
@@ -3078,11 +3086,6 @@ qt-privacy-ask=0
 # Podcast URLs list (string)
 #podcast-urls=
 
-[notify] # LibNotify Notification Plugin
-
-# Timeout (ms) (integer)
-#notify-timeout=4000
-
 [telepathy] # Telepathy "Now Playing" (MissionControl)
 
 [visual] # Visualizer filter
@@ -4608,6 +4611,9 @@ album-art=2
 # Playlist bookmark 10 (string)
 #bookmark10=
 
+[notify] # LibNotify Notification Plugin
+# Timeout (ms) (integer)
+#notify-timeout=4000
 [fake] # Fake video decoder
 # Image file (string)
 #fake-file=
@@ -4643,9 +4649,6 @@ album-art=2
 [fluidsynth] # FluidSynth MIDI synthetizer
 # Sound fonts (required) (string)
 #soundfont=
-[access_dv] # Digital Video (Firewire/ieee1394)  input
-# Caching value in ms (integer)
-#dv-caching=60
 [v4l] # Video4Linux input
 # Caching value in ms (integer)
 #v4l-caching=300

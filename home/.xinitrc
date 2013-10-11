@@ -12,7 +12,8 @@ setxkbmap dvorak -option caps:escape -option terminate:ctrl_alt_bksp
 xbindkeys
 
 # Start screensaver
-/usr/bin/xscreensaver -no-splash &
+#/usr/bin/xscreensaver -no-splash &
+exec xautolock -time 15 -locker 'i3lock --image /home/cwoodruf/pictures/wallpaper/hal.png' &
 
 # Wallpaper
 #feh --bg-scale /home/cwoodruf/pictures/wallpaper/ArchLinux.png
