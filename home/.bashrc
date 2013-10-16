@@ -31,7 +31,7 @@ set -o vi
 eval `dircolors ~/.dircolors`
 
 # Environment variables
-export PATH=$PATH:/home/cwoodruf/bin:/home/cwoodruf/.gem/ruby/1.9.1/bin
+export PATH=$PATH:/home/cwoodruf/bin:/home/cwoodruf/.gem/ruby/1.9.1/bin:/opt/Xilinx/DocNav
 export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim

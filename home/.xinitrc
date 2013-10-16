@@ -22,6 +22,13 @@ feh --bg-scale /home/cwoodruf/pictures/wallpaper/hal.jpg
 # Start terminal daemon
 /usr/bin/urxvtd -q -f -o
 
+
+case $1 in
+    gnome) exec gnome-session;;
+    i3);;
+    *) exec i3 --force-xinerama -V >> ~/.i3/i3log 2>&1;;
+esac
+
 # Use for awesome to make Java programs play nice
 #wmname LG3D
 #exec awesome
@@ -32,5 +39,5 @@ feh --bg-scale /home/cwoodruf/pictures/wallpaper/hal.jpg
 #exec gnome-session
 #exec ck-launch-session startxfce4
 
-echo "Starting at $(date)" >> ~/.i3/i3log
-exec i3 --force-xinerama -V >> ~/.i3/i3log 2>&1
+#echo "Starting at $(date)" >> ~/.i3/i3log
+#exec i3 --force-xinerama -V >> ~/.i3/i3log 2>&1
