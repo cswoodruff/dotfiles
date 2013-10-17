@@ -1,5 +1,3 @@
-pcm.!default {
-  type hw
-  card 1
-  device 8
-}
+defaults.pcm.card 1
+defaults.pcm.device 8
+defaults.ctl.card 1
